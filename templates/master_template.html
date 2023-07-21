@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>
+    {%block title%}
+    Welcome BookManagement System
+    {%endblock%}
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </title>
+</head>
+
+<body style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEnZUCVR5eY5bn6iLCYuoPeBZDI-zbpz9m7XopTj3M5g&usqp=CAU&ec=48665699);background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;" >
+  <nav class="navbar navbar-default" style="background-color: #ffffff;">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{url_for('show')}}"><b>Books Manager</b></a>
+      </div>
+      <ul class="nav navbar-nav">
+        <!-- <li><a href="{{url_for('show')}}"><b>Home</b></a></li> -->
+        <li><a href="{{url_for('insert')}}"><b>Insert Students</b></a></li>
+        <li><a href="{{url_for('book')}}"><b>Books Detail</b></a></li>
+        <li><a href="{{url_for('borrow')}}"><b>Borrow Detail</b></a></li>
+        <li><a href="{{url_for('rtrn')}}"><b>Return Detail</b></a></li>
+        <form action="/api" method="post" style="margin-left: 490px; margin-top: 15px;">
+          <input type="text" placeholder="Search.." name="tag" required>
+          <button type="submit">Search</button>
+        </form>
+        <li><a href="{{url_for('logout')}}" style="margin-left: 1000px; margin-top: -50px;"><b>Logout</b></a></li>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+  {%block body%}
+  {%endblock%}
+</div>
+
+</body>
+</html>

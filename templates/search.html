@@ -1,0 +1,49 @@
+{% extends "master_template.html" %}
+{%block title%}
+  Search book
+{%endblock%}
+
+{% block body%}
+  <!-- <h2>
+    <div class="topnav">
+        <div class="row">
+          <div class="col-4">
+           <form action="/api" method="post" autocomplete="off"> 
+           <div class="row">
+            <div class="col-6">
+            <input type="search" class="form-control" name="tag" id="tag"  placeholder=" "/> 
+            </div>
+            <div class="col-6">
+            <input type="submit" value="Search" class="form-control btn btn-primary " > 
+            </div>
+           </form> 
+           </div>
+          </div>
+         </div> 
+    </div>
+  </h2> -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Student Roll Number</th>
+        <th>Name</th>
+        <th>Book Id</th>
+        <th>Date</th>
+        <th>Due Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for stud in students%}
+      <tr>
+        <td> {{stud.id}}</td>
+        <td>{{stud.S_Roll}}</td>
+        <td>{{stud.Name}}</td>
+        <td>{{stud.B_id}}</td>
+        <td>{{stud.Date}}</td>
+        <td>{{stud.due}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+  {%endblock%}
